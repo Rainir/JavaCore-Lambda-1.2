@@ -19,10 +19,10 @@ public class Worker {
 
     public void start() {
         for (int i = 0; i < 100; i++) {
-            if (i < 33) {
-                errorCallback.onError("Error, task " + (i + 1) + " is not done");
-            } else {
+            if (i != 33) {
                 callback.onDone("Task " + (i + 1) + " is done");
+            } else {
+                errorCallback.onError("Error, task " + (i + 1) + " is not done");
             }
         }
     }
